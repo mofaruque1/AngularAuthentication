@@ -1,3 +1,5 @@
+
+
 button.btn-submit {
     background-color: #38547b;
     color: #fff;
@@ -33,11 +35,11 @@ div.error-message i {
 
 .tabs .tab a {
     font-size: 25px;
-    color: grey !important;
+    color: black !important;
 }
 
 .tabs .tab a.active {
-    background-color: #fff !important;
+    background-color: rgb(31, 189, 52) !important;
 }
 
 /* You can add global styles to this file, and also import other style files
