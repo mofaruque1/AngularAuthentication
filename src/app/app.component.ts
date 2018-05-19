@@ -8,3 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 }
+//git remote add origin https://github.com/octocat/Spoon-Knife
