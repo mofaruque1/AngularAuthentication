@@ -12,4 +12,8 @@ export class SignInComponent implements OnInit {
   ngOnInit() {
   }
 
+  OnSubmit(username:string,password:string){
+    
+  }
+
 }

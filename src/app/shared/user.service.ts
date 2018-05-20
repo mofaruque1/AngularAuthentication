@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 import { Response } from "@angular/http";
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
@@ -19,6 +19,13 @@ export class UserService {
       LastName: user.LastName
     }
     return this.http.post('http://localhost:57166/api/User/Register', body);
+  }
+
+  userAuthentication(username,password){
+    var data = "username="+username+"&password="+password+"&grant_type=password";
+    var reqHeader = new HttpHeaders({'content-Type':'application/x-www-urlencoded'});
+    return this.http.post('http://localhost:57166'+'/token',data,{headers:reqHeader});
+
   }
 
 }
