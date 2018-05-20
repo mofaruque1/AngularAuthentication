@@ -41,12 +41,19 @@ import { AuthInterceptor } from './auth/auth.interceptor';
   providers: [
     UserService,
     AuthGuard,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass:AuthInterceptor,
-      multi:true
-    }
+        {
+          provide: HTTP_INTERCEPTORS,
+          useClass:AuthInterceptor,
+          multi:true
+        }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// ,
+//     {
+//       provide: HTTP_INTERCEPTORS,
+//       useClass:AuthInterceptor,
+//       multi:true
+//     }
