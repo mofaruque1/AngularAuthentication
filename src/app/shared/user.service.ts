@@ -18,14 +18,19 @@ export class UserService {
       FirstName: user.FirstName,
       LastName: user.LastName
     }
-    return this.http.post('http://localhost:57166/api/User/Register', body);
+    var reqHeader = new HttpHeaders({'No-Auth':'True'});
+    return this.http.post('http://localhost:57166/api/User/Register', body,{headers:reqHeader});
   }
 
   userAuthentication(username,password){
     var data = "username="+username+"&password="+password+"&grant_type=password";
-    var reqHeader = new HttpHeaders({'content-Type':'application/x-www-urlencoded'});
+    var reqHeader = new HttpHeaders({'content-Type':'application/x-www-urlencoded','No-Auth':'True'});
     return this.http.post('http://localhost:57166'+'/token',data,{headers:reqHeader});
 
+  }
+
+  getUserClaims(){
+    return this.http.get('http://localhost:57166'+'/api/GetUserClaims');
   }
 
 }
